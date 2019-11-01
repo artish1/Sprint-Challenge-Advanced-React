@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
+import PersonContainer from "./components/PersonContainer/PersonContainer";
 
 class App extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      people: []
+    };
   }
 
   componentDidMount() {
@@ -13,6 +16,7 @@ class App extends Component {
       .get("http://localhost:5000/api/players")
       .then(res => {
         console.log(res);
+        this.setState({ people: res.data });
       })
       .catch(err => {
         console.log(err.message);
@@ -20,7 +24,11 @@ class App extends Component {
   }
 
   render() {
-    return <div className="App"></div>;
+    return (
+      <div className="App">
+        <PersonContainer people={this.state.people} />
+      </div>
+    );
   }
 }
 
