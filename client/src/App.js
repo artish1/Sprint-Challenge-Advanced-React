@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
 import PersonContainer from "./components/PersonContainer/PersonContainer";
-
+import DarkMode from "./components/DarkMode/DarkMode";
 class App extends Component {
   constructor() {
     super();
@@ -26,6 +26,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <DarkMode />
         <PersonContainer people={this.state.people} />
       </div>
     );
