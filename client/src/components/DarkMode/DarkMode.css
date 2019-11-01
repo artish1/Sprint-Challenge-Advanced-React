@@ -1,0 +1,13 @@
+.dark-mode-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
+}
+
+body.dark .dark-mode-wrapper h3 {
+  color: #ddd;
+}
