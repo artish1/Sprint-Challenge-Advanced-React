@@ -11,3 +11,18 @@
 body.dark .dark-mode-wrapper h3 {
   color: #ddd;
 }
+
+button {
+  background-color: teal;
+  border: none;
+  color: #eee;
+  font-weight: 600;
+  cursor: pointer;
+  height: 40px;
+  width: 150px;
+}
+
+body.dark button {
+  background-color: rgb(250, 216, 175);
+  color: #444;
+}
