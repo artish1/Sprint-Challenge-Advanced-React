@@ -1,0 +1,21 @@
+.person {
+  background-color: aliceblue;
+  border-radius: 100px;
+  text-align: center;
+}
+
+.person h2 {
+  font-size: 22px;
+}
+
+body.dark .person {
+  background-color: rgb(156, 156, 156);
+}
+
+body.dark .person h2 {
+  color: white;
+}
+
+body.dark .person p {
+  color: #ddd;
+}

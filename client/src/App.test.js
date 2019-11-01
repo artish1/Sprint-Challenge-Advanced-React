@@ -1,9 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import DarkMode from "./components/DarkMode/DarkMode";
+import { render, fireEvent } from "@testing-library/react";
+import { getData } from "./App";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe("dark mode", () => {
+  test("render dark mode component", () => {
+    const container = render(<DarkMode />);
+    container.getByText(/Dark Mode/i);
+  });
+
+  test("toggle dark mode", () => {
+    const container = render(<DarkMode />);
+    fireEvent.click(container.getByTestId("darkbutton"));
+    expect(container.baseElement.classList.contains("dark")).toBe(true);
+  });
+});
+
+describe("API Calls", () => {
+  test("Gets data from api", () => {
+    getData((result, status) => {
+      expect(status).toBe(true);
+    });
+  });
 });
